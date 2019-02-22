@@ -41,6 +41,7 @@
 #include "gpt.h"
 #include "hw_timer.h"
 
+
 static SemaphoreHandle_t xSemaphore;
 
 void Hw_Timer_Init(void)
@@ -58,7 +59,7 @@ void Hw_Timer_Init(void)
     GPT_Init(BOARD_GPTA_BASEADDR, &config);
 
     /* Set GPT clock source to 24M OSC */
-    GPT_SetClockSource(BOARD_GPTA_BASEADDR, gptClockSourceOsc);
+    GPT_SetClockSource(BOARD_GPTA_BASEADDR, gptClockSourcePeriph);
 
     /* Set GPT interrupt priority 3 */
     NVIC_SetPriority(BOARD_GPTA_IRQ_NUM, 3);
