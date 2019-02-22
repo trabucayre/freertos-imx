@@ -38,7 +38,7 @@ void hardware_init(void)
     /* Board specific clock settings */
     BOARD_ClockInit();
     /* initialize debug uart */
-    //dbg_uart_init();
+    dbg_uart_init();
 
     /* In this demo, we need to grasp board GPT exclusively */
     RDC_SetPdapAccess(RDC, BOARD_GPTA_RDC_PDAP, 3 << (BOARD_DOMAIN_ID * 2), false, false);
@@ -53,12 +53,8 @@ void hardware_init(void)
     /* BOARD_GPIO_LED_RDC_PDAP is same as BOARD_GPIO_KEY_RDC_PDAP, so bypass
      * BOARD_GPIO_KEY_RDC_PDAP setting */
 
-    /* Enable PLL PFD0 for GPTA */
-    CCM_ControlGate(CCM, ccmPllGateSys, ccmClockNeededRunWait);
-    CCM_ControlGate(CCM, ccmPllGatePfd0, ccmClockNeededRunWait);
-
     /* Select GPTA clock derived from PLL PFD0 */
-    CCM_UpdateRoot(CCM, BOARD_GPTA_CCM_ROOT, ccmRootmuxGptSysPllPfd0, 0, 0);
+    CCM_UpdateRoot(CCM, BOARD_GPTA_CCM_ROOT, ccmRootmuxGptOsc24m, 0, 0);
     /* Enable clock used by GPTA */
     CCM_EnableRoot(CCM, BOARD_GPTA_CCM_ROOT);
     CCM_ControlGate(CCM, BOARD_GPTA_CCM_CCGR, ccmClockNeededRunWait);
