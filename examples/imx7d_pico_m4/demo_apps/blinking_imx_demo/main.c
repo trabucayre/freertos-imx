@@ -89,7 +89,7 @@ int main(void)
     Hw_Timer_Init();
     GPIO_Ctrl_Init();
 
-    //PRINTF("\n\r================= Blinking Demo ==================\n\r");
+    PRINTF("\n\r================= Blinking Demo ==================\n\r");
 #if 1
 
     /* Create a the APP main task. */
