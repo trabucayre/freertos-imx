@@ -98,12 +98,12 @@
 #endif	// #if ( DWARF_BOARD == 1 )
 
 /* Debug UART information for this board */
-#define BOARD_DEBUG_UART_RDC_PDAP             rdcPdapUart3
-#define BOARD_DEBUG_UART_CCM_ROOT             ccmRootUart3
-#define BOARD_DEBUG_UART_CCM_CCGR             ccmCcgrGateUart3
-#define BOARD_DEBUG_UART_BASEADDR             UART3
-#define BOARD_DEBUG_UART_IRQ_NUM              UART3_IRQn
-#define BOARD_DEBUG_UART_HANDLER              UART3_Handler
+#define BOARD_DEBUG_UART_RDC_PDAP             rdcPdapUart6
+#define BOARD_DEBUG_UART_CCM_ROOT             ccmRootUart6
+#define BOARD_DEBUG_UART_CCM_CCGR             ccmCcgrGateUart6
+#define BOARD_DEBUG_UART_BASEADDR             UART6
+#define BOARD_DEBUG_UART_IRQ_NUM              UART6_IRQn
+#define BOARD_DEBUG_UART_HANDLER              UART6_Handler
 /*#define BOARD_DEBUG_UART_RDC_PDAP             rdcPdapUart6
 #define BOARD_DEBUG_UART_CCM_ROOT             ccmRootUart6
 #define BOARD_DEBUG_UART_CCM_CCGR             ccmCcgrGateUart6

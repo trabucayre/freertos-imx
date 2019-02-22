@@ -74,7 +74,6 @@ void BOARD_ClockInit(void)
 /* Initialize debug console. */
 void dbg_uart_init(void)
 {
-#if 0
     /* Set debug uart for M4 core domain access only */
     RDC_SetPdapAccess(RDC, BOARD_DEBUG_UART_RDC_PDAP, 3 << (BOARD_DOMAIN_ID * 2), false, false);
 
@@ -93,7 +92,6 @@ void dbg_uart_init(void)
     configure_uart_pins(BOARD_DEBUG_UART_BASEADDR);
 
     DbgConsole_Init(BOARD_DEBUG_UART_BASEADDR, get_uart_clock_freq(BOARD_DEBUG_UART_BASEADDR), 115200, uartModemModeDce);
-#endif
 }
 
 void BOARD_RdcInit(void)
