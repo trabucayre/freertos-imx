@@ -130,6 +130,15 @@
 #define BOARD_I2C_FXOS8700_ADDR               (0x1E)
 #endif	// #if ( DWARF_BOARD == 1 )
 
+/* ECSPI information for this board */
+#define BOARD_ECSPI_RDC_PDAP                  rdcPdapEcspi3
+#define BOARD_ECSPI_CCM_ROOT                  ccmRootEcspi3
+#define BOARD_ECSPI_CCM_CCGR                  ccmCcgrGateEcspi3
+#define BOARD_ECSPI_CHANNEL                   ecspiSelectChannel0
+#define BOARD_ECSPI_IRQ_NUM                   eCSPI3_IRQn
+#define BOARD_ECSPI_BASEADDR                  ECSPI3
+#define BOARD_ECSPI_HANDLER                   eCSPI3_Handler
+
 /* GPC information for this board*/
 #define BOARD_GPC_BASEADDR                    GPC
 
